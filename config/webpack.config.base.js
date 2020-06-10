@@ -35,8 +35,7 @@ let entryHandler = {
         "pc": {}
       };
     }
-    // let jsDir = path.resolve(srcDir, 'scripts');
-    entryDir = path.resolve(srcDir, entryDir);
+    entryDir = path.resolve(entryDir);
     this.getAllFiles(entryDir, isMultiDevice);
     for (let dir in _this.entryFiles) {
       let name = _this.entryFiles[dir];
@@ -101,11 +100,12 @@ module.exports = async function (params) {
   process.env.NODE_ENV = env;
   //项目编译后的保存目录
   // let buidDir = params.build //path.normalize(path.resolve(baseDir, `${params.build}/`));
-  let buidDir = path.normalize(path.resolve(baseDir, `${params.build}/`));
-  // let srcDir = path.resolve(baseDir, 'src'); //源码目录
+  // let buidDir = path.normalize(path.resolve(baseDir, `${params.build}/`));
+  let buidDir = path.resolve(params.build || "build");
+  let srcDir = path.resolve(params.srcDir || `${process.cwd()}/src`); //源码目录
   let webpackBuidPath = path.resolve(baseDir, '__build'); //webpack 编译的虚拟目录只针对开发环境
   //项目编译入口目录
-  // let entryDir = params.entryDir || "entry";
+  let entryDir = params.entryDir || "src/scripts/entry";
   let entries = null;
   if (entryHandler.entryMap == null) {
     //重置编译入口文件集合
@@ -242,7 +242,7 @@ module.exports = async function (params) {
       modules: [
         process.cwd() + "/node_modules",
         baseDir + "/node_modules",
-        path.resolve(srcDir)
+        srcDir
       ],
       extensions: [ //开启后缀名的自动补全
         '.tsx',
