@@ -1,6 +1,6 @@
 {
   "name": "@51npm/freedom-middleware-webpack4",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "webpack4前端项目开发构建中间件",
   "main": "index.js",
   "directories": {

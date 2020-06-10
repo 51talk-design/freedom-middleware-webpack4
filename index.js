@@ -89,7 +89,7 @@ function webpackCompile(baseConf) {
 				console.log(('编译出错,请仔细检查！！！').bold.red);
 				process.exit();
 			}
-			return true;
+			resolve(true);
 		});
 	});
 }
