@@ -2,9 +2,6 @@
 
 中间件统一管理了项目开发中大概95%以上的构建配置。在对项目构建时，中间件会自动合并项目中的webpack.config.js(**构建项目必须存在的webpack扩展约束文件**)文件，然后进行项目的构建。
 
-[![npm](https://img.shields.io/npm/l/freedom-middleware-webpack2.svg)](LICENSE)
-[![NPM Version](https://img.shields.io/npm/v/freedom-middleware-webpack2.svg)](https://www.npmjs.com/package/freedom-middleware-webpack2)
-[![npm](https://img.shields.io/npm/dt/freedom-middleware-webpack2.svg)](https://www.npmjs.com/package/freedom-middleware-webpack2)
 
 ### Freedom-middleware-webpack4构建中间件支持构建的项目
 
@@ -14,24 +11,24 @@
 - 中间件生成的tsconfig.json：**允许开发者自行定义ts编译选项**
 - postcss.config.js：**允许开发者自行定义样式处理方式**
 
-### Freedom-middleware-webpack4安装
+### freedom-middleware-webpack4安装
 
 ```
 npm install @51npm/freedom-middleware-webpack4
 ```
 
-### Freedom-middleware-webpack4构建中间件使用
+### freedom-middleware-webpack4构建中间件使用
 
 ```js
-var webpackBuild = require("freedom-middleware-webpack4");
+var webpackBuild = require("@51npm/freedom-middleware-webpack4");
 (async function () {
   var params = {
     port: 9090,
     env: "dev",//环境变量，dev:开发环境；prod：生成环境
-    srcDir:"/src",
-    entryDir:"/entry",//编译入口目录，会跟src组装一起/src/entry
+    srcDir:"src",
+    entryDir:"./src/scripts/entry",//编译入口目录，会跟src组装一起/src/entry
     publicPath: `//{域名}/oneTomany/0.0.1`,
-    build: `build`,//生产环境prod构建的资源存放的目录，在dev环境中该值忽略
+    build: `./build`,//生产环境prod构建的资源存放的目录，在dev环境中该值忽略
     proxy: {
       context: ["/api", "/auth","/award"],
       options: {
@@ -50,8 +47,8 @@ var webpackBuild = require("freedom-middleware-webpack4");
   "root":"",//根目录，不写默认为process.cwd()
   "port":"本地环境dev启动的端口后",
   "env":"环境变量，dev:开发环境；prod：生成环境",
-  "srcDir": "/src",// 源码目录，默认源码目录为：process.cwd()
-  "entryDir":"/src/entry",//webpack编译入口目录，为srcDir源码目录中的相对目录，跟srcDir一起构成完成的编译目录
+  "srcDir": "src",// 源码目录，默认源码目录为：process.cwd()
+  "entryDir":"./src/scripts/entry",//webpack编译入口目录，为srcDir源码目录中的相对目录，跟srcDir一起构成完成的编译目录
   "publicPath":"构建资源的替换路径，比如：css中的图片路径",
   "build":"生产环境prod构建的资源存放的目录，在dev环境中该值忽略",
   "proxy":{ //反向代理设置
@@ -89,9 +86,9 @@ module.exports = function () {
 ```
 
 ### 版本更新说明
-| 发布时间 | 发布版本 | 发布功能 |
-| -------- | -------- | -------- |
-|          |          |          |
+| 发布时间   | 发布版本 | 发布功能       |
+| ---------- | -------- | -------------- |
+| 2020-06-16 | 1.0.8    | 修改readme说明 |
 
 
 
