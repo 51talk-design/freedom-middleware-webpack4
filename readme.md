@@ -2,6 +2,10 @@
 
 中间件统一管理了项目开发中大概95%以上的构建配置。在对项目构建时，中间件会自动合并项目中的webpack.config.js(**构建项目必须存在的webpack扩展约束文件**)文件，然后进行项目的构建。
 
+[![npm](https://img.shields.io/npm/l/@51npm/freedom-middleware-webpack4.svg)](LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@51npm/freedom-middleware-webpack4.svg)](https://www.npmjs.com/package/@51npm/freedom-middleware-webpack4)
+[![npm](https://img.shields.io/npm/dt/@51npm/freedom-middleware-webpack4.svg)](https://www.npmjs.com/package/@51npm/freedom-middleware-webpack4)
+
 
 ### Freedom-middleware-webpack4构建中间件支持构建的项目
 
